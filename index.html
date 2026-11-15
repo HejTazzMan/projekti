@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Markovi projekti</title>
+<meta name="description" content="Stvari koje sam pravio: za kuću, za posao, za zabavu i iz čiste radoznalosti.">
+<meta property="og:title" content="Markovi projekti">
+<meta property="og:description" content="Stvari koje sam pravio: za kuću, za posao, za zabavu i iz čiste radoznalosti.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/og.png">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2317171A'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23FADCCF'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%23D9E5FA'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%23DCEBD8'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23E6DDF8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=8">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="intro">
+      <h1>Projekti</h1>
+      <p>Sve što sam pravio iz radoznalosti, za kuću, za posao ili da mi olakša život. Klikni na bilo koju pločicu da vidiš više, a gde može, i da isprobaš.</p>
+    </div>
+    <div class="stats" aria-label="Brojke">
+      <div><strong id="stat-total">0</strong><span>projekata</span></div>
+      <div><strong id="stat-live">0</strong><span>možeš da isprobaš</span></div>
+    </div>
+  </header>
+
+  <nav class="filters" id="filters" aria-label="Kategorije"></nav>
+
+  <main class="grid" id="grid"></main>
+
+  <footer class="foot">
+    <p>Privatna stranica za društvo. Ako ti se nešto svidi, javi mi, a link molim te ne deli dalje.</p>
+  </footer>
+</div>
+
+<div class="overlay" id="overlay" hidden>
+  <aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="p-title">
+    <div class="panel-head">
+      <span id="p-cat"></span>
+      <button class="icon-btn" id="p-close" aria-label="Zatvori">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="panel-body">
+      <div class="p-viewer">
+        <div class="p-media" id="p-media"></div>
+        <div class="p-gallery" id="p-gallery"></div>
+      </div>
+      <div class="p-text">
+        <span class="status" id="p-status"></span>
+        <h2 id="p-title"></h2>
+        <div id="p-story"></div>
+      </div>
+    </div>
+    <div class="panel-foot" id="p-actions"></div>
+  </aside>
+</div>
+
+<script src="projekti.js?v=8"></script>
+<script src="app.js?v=8"></script>
+</body>
+</html>

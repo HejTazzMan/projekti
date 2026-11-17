@@ -17,11 +17,14 @@
     bulb: "M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z",
     table: "M3 5h18v14H3zM3 10h18M3 14.5h18M9 5v14",
     chart: "M3 20h18M6 16l4-5 3 3 5-7M15 7h3v3",
+    network: "M12 9a3 3 0 100-6 3 3 0 000 6zM5 21a3 3 0 100-6 3 3 0 000 6zM19 21a3 3 0 100-6 3 3 0 000 6zM12 9v3M12 12l-5 3.5M12 12l5 3.5",
+    layers: "M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 17.5l9 5 9-5",
     copy: "M9 9h11v11H9zM5 15H4V4h11v1"
   };
   var DOT = { "Radi": "#1E8A4C", "Radi lokalno": "#2563EB", "U izradi": "#C47A0B", "Prototip": "#7A808C" };
-  var TRY = { play: "Igraj odmah", open: "Isprobaj odmah", download: "Preuzmi" };
-  var ARROW = { open: "M7 17L17 7M8 7h9v9", play: "M7 5l12 7-12 7z", download: "M12 4v12M6 11l6 6 6-6M5 20h14" };
+  var TRY = { play: "Igraj odmah", open: "Isprobaj odmah", download: "Preuzmi", view: "Pogledaj na sajtu" };
+  var ARROW = { open: "M7 17L17 7M8 7h9v9", play: "M7 5l12 7-12 7z", download: "M12 4v12M6 11l6 6 6-6M5 20h14",
+    view: "M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12zM12 15a3 3 0 100-6 3 3 0 000 6z" };
 
   var data = window.PROJEKTI;
   var cats = window.KATEGORIJE;
@@ -37,8 +40,9 @@
   function esc(s) {
     return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; });
   }
-  // "Može odmah da se proba" = glavno (prvo) dugme projekta ima pravi link.
-  function isLive(p) { return !!(p.links[0] && p.links[0].url); }
+  // "Može odmah da se proba" = glavno (prvo) dugme projekta ima pravi link koji nije samo opis (view).
+  function hasLink(p) { return !!(p.links[0] && p.links[0].url); }
+  function isLive(p) { return hasLink(p) && p.links[0].kind !== "view"; }
   function vars(p) {
     var c = cats[p.cat];
     return "--tint:" + c.tint + ";--ink-c:" + c.ink + ";--dot:" + DOT[p.status];
@@ -80,14 +84,14 @@
         : '<span class="row"><span class="ico">' + svg(ICON[p.icon], p.size === "small" ? 22 : 26) + "</span>" +
           '<span class="status">' + esc(p.status) + "</span></span>";
       // Projekti sa pravim linkom dobijaju jasnu oznaku na dnu pločice.
-      var live = isLive(p) ? p.links[0] : null;
+      var live = hasLink(p) ? p.links[0] : null;
       var tryIt = live
-        ? '<span class="try">' + svg(ARROW[live.kind] || ARROW.open, 16, 2.2) + (TRY[live.kind] || TRY.open) + "</span>"
+        ? '<span class="try' + (live.kind === "view" ? " view" : "") + '">' + svg(ARROW[live.kind] || ARROW.open, 16, 2.2) + (TRY[live.kind] || TRY.open) + "</span>"
         : "";
       b.innerHTML = top +
         '<span class="txt"><span class="cat">' + esc(p.cat) + '</span><span class="title">' + esc(p.title) + "</span>" +
         '<span class="short">' + esc(p.short) + "</span></span>" + tryIt;
-      if (live) b.classList.add("live");
+      if (live && live.kind !== "view") b.classList.add("live");
       b.addEventListener("click", function () { location.hash = p.slug; });
       grid.appendChild(b);
     });

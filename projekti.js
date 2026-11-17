@@ -1,6 +1,7 @@
 // Svi projekti na stranici. Novi projekat = novi objekat u ovoj listi.
 // size: "big" (duplo visoka pločica), "normal", "small" (bez slike)
 // links: url null = link još nije spreman, prikazuje se kao "uskoro"
+//        kind: open | play | download = može odmah da se proba; view = samo da se pogleda (opis na sajtu)
 // cover: putanja do slike u images/, null = obojena pločica sa ikonicom
 
 window.KATEGORIJE = {
@@ -9,7 +10,8 @@ window.KATEGORIJE = {
   "Korisni alati":    { tint: "#D9E5FA", ink: "#2049B5" },
   "Posao i karijera": { tint: "#D3EDE8", ink: "#1C5C55" },
   "AI asistenti":     { tint: "#E6DDF8", ink: "#5A30AE" },
-  "Zajednica":        { tint: "#F6E7C4", ink: "#714F07" }
+  "Zajednica":        { tint: "#F6E7C4", ink: "#714F07" },
+  "Marketing":        { tint: "#F8DCE6", ink: "#9B2453" }
 };
 
 window.PROJEKTI = [
@@ -84,20 +86,58 @@ window.PROJEKTI = [
     links: []
   },
   {
-    slug: "novogradnja",
-    title: "Mapa novogradnje",
-    cat: "Kuća i prostor",
+    slug: "marketing-os",
+    title: "Marketing OS",
+    cat: "Marketing",
     status: "Radi",
     size: "normal",
-    icon: "pin",
-    thumb: "images/plocice/novogradnja.jpg",
-    cover: "images/novogradnja.jpg",
-    gallery: [],
-    short: "Mapa Beograda sa novim zgradama i aktuelnim oglasima za stanove.",
+    icon: "network",
+    thumb: "images/plocice/marketing-os.jpg",
+    cover: "images/marketing/marketing-os-mapa.jpg",
+    gallery: ["images/marketing/marketing-os-uvod.jpg"],
+    short: "Moj AI sistem koji vodi marketing od početka do kraja: devet AI agenata, a čovek odobrava.",
     story: [
-      "Mapa ima dva dela. Prvi pokazuje novogradnju u Beogradu, a drugi oglase za stanove sa različitih sajtova za nekretnine, pa se na jednom mestu vidi šta se trenutno prodaje."
+      "Sistem koji sam napravio da vodi ceo marketinški posao: istraživanje, strategiju, sadržaj, SEO i izveštaje. Devet specijalizovanih AI agenata deli posao, a pre pisanja svaki prvo pročita profil brenda klijenta, pa sve zvuči kao taj brend.",
+      "Zahtev stigne preko Slacka, glavni agent ga dodeli pravom specijalisti, nacrt prođe proveru kvaliteta i činjenica, a onda ga pregleda čovek. Ništa se ne objavljuje samo.",
+      "Ovo je sistem koji koristim u svom poslu. Na sajtu je opisan sa animiranom mapom koja pokazuje kako se delovi povezuju, pa ga ne možeš isprobati, ali možeš da vidiš kako radi."
     ],
-    links: [{ label: "Otvori mapu", url: "https://hejtazzman.github.io/novogradnja-beograd/", kind: "open" }]
+    links: [{ label: "Pogledaj na mom sajtu", url: "https://markotanaskovic.net/marketing-os-system/", kind: "view" }]
+  },
+  {
+    slug: "content-factory",
+    title: "Content Factory",
+    cat: "Marketing",
+    status: "Radi",
+    size: "normal",
+    icon: "layers",
+    thumb: "images/plocice/content-factory.jpg",
+    cover: "images/marketing/content-factory-mapa.jpg",
+    gallery: ["images/marketing/content-factory-uvod.jpg"],
+    short: "Deo Marketing OS-a za sadržaj: prvo istraživanje, pa strategija, pa tekstovi.",
+    story: [
+      "Sistem za pravljenje sadržaja koji ne počinje pisanjem, nego istraživanjem: šta već postoji, šta radi konkurencija i šta publika zaista pita. Tek onda dolaze teme, ključne reči i plan kampanje.",
+      "Na osnovu toga nastaju dugi članci, objave za LinkedIn i Instagram i email sekvence. Pre nego što bilo šta stigne do klijenta, prolazi proveru gramatike, stila i marketinški pregled, a rezultati se vraćaju u sistem kao lekcije za sledeći krug.",
+      "Na sajtu možeš da vidiš animiranu mapu celog procesa."
+    ],
+    links: [{ label: "Pogledaj na mom sajtu", url: "https://markotanaskovic.net/content-factory/", kind: "view" }]
+  },
+  {
+    slug: "seo-geo",
+    title: "SEO/GEO sistem",
+    cat: "Marketing",
+    status: "Radi",
+    size: "normal",
+    icon: "search",
+    thumb: "images/plocice/seo-geo.jpg",
+    cover: "images/marketing/seo-geo-mapa.jpg",
+    gallery: ["images/marketing/seo-geo-uvod.jpg"],
+    short: "Da te nađu i na Google-u i u odgovorima AI alata kao što su ChatGPT i Perplexity.",
+    story: [
+      "Ljudi danas ne traže samo na Google-u, nego pitaju i ChatGPT, Perplexity i Google AI Overviews. Ovaj sistem jednim procesom radi za oba: da se sajt dobro rangira na Google-u i da ga AI alati citiraju kao izvor.",
+      "Ide u krug: provera sajta i poređenje sa konkurencijom, istraživanje šta kupci stvarno traže, strategija, pisanje sadržaja, poboljšanje stranica i mesečni izveštaj. Onda sve iz početka, na osnovu novih podataka.",
+      "Na sajtu je opisan sa animiranom mapom ciklusa."
+    ],
+    links: [{ label: "Pogledaj na mom sajtu", url: "https://markotanaskovic.net/seo-geo-optimisation/", kind: "view" }]
   },
   {
     slug: "clone-any-website",
@@ -116,6 +156,22 @@ window.PROJEKTI = [
       "Korisno je kad hoćeš da preseliš sajt, da ga ubrzaš ili da na kopiji probaš novi izgled, a da ne diraš pravi sajt. Radim to samo za sajtove čiji vlasnik to traži."
     ],
     links: []
+  },
+  {
+    slug: "novogradnja",
+    title: "Mapa novogradnje",
+    cat: "Kuća i prostor",
+    status: "Radi",
+    size: "normal",
+    icon: "pin",
+    thumb: "images/plocice/novogradnja.jpg",
+    cover: "images/novogradnja.jpg",
+    gallery: [],
+    short: "Mapa Beograda sa novim zgradama i aktuelnim oglasima za stanove.",
+    story: [
+      "Mapa ima dva dela. Prvi pokazuje novogradnju u Beogradu, a drugi oglase za stanove sa različitih sajtova za nekretnine, pa se na jednom mestu vidi šta se trenutno prodaje."
+    ],
+    links: [{ label: "Otvori mapu", url: "https://hejtazzman.github.io/novogradnja-beograd/", kind: "open" }]
   },
   {
     slug: "rainmeter",
@@ -154,6 +210,22 @@ window.PROJEKTI = [
       "Koristi postojeći alat koji prebacuje YouTube video u druge formate. Meni je trebao za nešto konkretno: da YouTube Music plejliste izvezem u MP3 i tako napravim svoju biblioteku za ličnu upotrebu i istraživanje muzike."
     ],
     links: [{ label: "Preuzmi aplikaciju", url: null, kind: "download" }]
+  },
+  {
+    slug: "price-tracker",
+    title: "PriceTracker",
+    cat: "Korisni alati",
+    status: "Radi",
+    size: "normal",
+    icon: "tag",
+    thumb: "images/plocice/price-tracker.jpg",
+    cover: null,
+    gallery: ["images/price-tracker.jpg"],
+    short: "Prati cene proizvoda koje izabereš i javi ti kad poskupe ili pojeftine.",
+    story: [
+      "Mali web crawler za praćenje cena. Prvo potraži proizvod i pronađe koji sajtovi ga prodaju, a onda prati cenu i javi ti kad se promeni, onako kako si mu zadao: kad padne, kad poraste ili oba. Radi online, pa ništa ne mora da ti bude uključeno na računaru. Ti samo izabereš kako želiš da dobijaš obaveštenja: mejlom ili preko Telegrama. Može da se podesi i za WhatsApp, ali je Telegram besplatan."
+    ],
+    links: []
   },
   {
     slug: "nadji-mi-posao",
@@ -269,21 +341,6 @@ window.PROJEKTI = [
       "Na kraju dobiješ jasnu sliku koliko je ideja izvodljiva i koje su joj prednosti i mane, pre nego što uložiš vreme i novac."
     ],
     links: [{ label: "Otvori gem", url: null, kind: "open" }]
-  },
-  {
-    slug: "price-tracker",
-    title: "PriceTracker",
-    cat: "Korisni alati",
-    status: "Radi",
-    size: "normal",
-    icon: "tag",
-    cover: null,
-    gallery: ["images/price-tracker.jpg"],
-    short: "Prati cene proizvoda koje izabereš i javi ti kad poskupe ili pojeftine.",
-    story: [
-      "Mali web crawler za praćenje cena. Prvo potraži proizvod i pronađe koji sajtovi ga prodaju, a onda prati cenu i javi ti kad se promeni, onako kako si mu zadao: kad padne, kad poraste ili oba. Radi online, pa ništa ne mora da ti bude uključeno na računaru. Ti samo izabereš kako želiš da dobijaš obaveštenja: mejlom ili preko Telegrama. Može da se podesi i za WhatsApp, ali je Telegram besplatan."
-    ],
-    links: []
   },
   {
     slug: "pdf-extractor",

@@ -185,6 +185,9 @@ img { display: block; max-width: 100%; }
 }
 .tile.has-cover .try { margin-left: 10px; }
 .tile.live:hover .try { background: var(--ink-c); }
+/* Samo opis na sajtu: svetlije dugme, da se razlikuje od "isprobaj odmah" */
+.try.view { background: rgba(255,255,255,.75); color: var(--ink); box-shadow: inset 0 0 0 1.5px rgba(23,23,26,.18); }
+.tile:hover .try.view { background: #fff; }
 .tile.small { padding: 18px 20px; }
 .tile.small .ico { width: 40px; height: 40px; border-radius: 12px; }
 

@@ -140,6 +140,26 @@ window.PROJEKTI = [
     links: [{ label: "Pogledaj na mom sajtu", url: "https://markotanaskovic.net/seo-geo-optimisation/", kind: "view" }]
   },
   {
+    // Namerno 8. po redu: na računaru (4 kolone) pada tačno ispod Travel Advisora
+    slug: "hoteli-na-mapi",
+    title: "Koji hotel da odaberem?",
+    cat: "AI asistenti",
+    status: "Radi",
+    size: "normal",
+    icon: "bed",
+    thumb: "images/plocice/hoteli-na-mapi.jpg",
+    cover: "images/hoteli/mapa.jpg",
+    gallery: ["images/hoteli/hotel.jpg","images/hoteli/sami.jpg","images/hoteli/vreme.jpg"],
+    short: "Kad već znaš gde i kada putuješ: svi hoteli na jednoj mapi, sa cenama za tvoje datume i upozorenjima iz recenzija.",
+    story: [
+      "Kad su destinacija i datumi već odlučeni, ostaje najteži deo: koji hotel. Kažem AI-ju koju agenciju gledam ili mu pošaljem linkove sa Bookinga, a on skupi sve hotele i složi ih na interaktivnu mapu.",
+      "Za svaki hotel dobijem cenu za svaki termin polaska, broj noćenja i vrstu usluge (samo noćenje, doručak, polupansion, pun pansion), ocenu sa Bookinga po kategorijama i šta piše u stvarnim recenzijama gostiju: šta hvale, na šta se žale i šta je dobro da znam pre rezervacije. Tu su i linkovi ka hotelu kod agencije i na Bookingu.",
+      "Može i poređenje sa varijantom „sami organizujemo“: AI nađe direktan let, cenu predatog prtljaga i prevoz od aerodroma, pa se pored cene aranžmana vidi i koliko bi koštali let i hotel kupljeni odvojeno. Hoteli iz agencije i oni koje bukiramo sami su na mapi u različitim bojama.",
+      "Hotele koji nam ne odgovaraju sakrijem jednim klikom, a ostale filtriram po zvezdicama i usluzi i ređam po ceni ili oceni. Tu je i vremenska prognoza sa temperaturom mora za te dane. Na kraju dobijem link koji mogu da pošaljem onome s kim putujem, bez instaliranja i bez naloga."
+    ],
+    links: [{ label: "Otvori mapu", url: "https://claude.ai/artifact/LfAWLUQ8uXwFmmx45aoV1A", kind: "open" }]
+  },
+  {
     slug: "clone-any-website",
     title: "Clone Any Website",
     cat: "Korisni alati",
